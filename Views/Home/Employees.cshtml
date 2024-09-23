@@ -1,0 +1,76 @@
+﻿@model HRApplicationnew.Models.Employees
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <style>
+            .input-validation-error{
+                border: 1px solid darkred;
+                background :#ffcccb;
+            }
+            .validation-summary-errors{
+                color : red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form  asp-action="Employees" method="post">
+
+             <h1>Employee Form</h1><br />
+
+             <div asp-validation-summary="All">
+
+             </div>
+
+             <div class="form-group">
+                 <label asp-for="EmployeeName">Employee Name</label>
+                 <input asp-for="EmployeeName" class=" form-control form-control-sm" />
+             </div>
+
+             <div class="form-group">
+                  <label asp-for="Departement">Depatement</label>
+                  <select asp-for="Departement" class=" form-control form-control-sm">
+                    <option>
+
+                    </option>
+                    <option value="operations"> Opearations
+
+                     </option>
+                     <option value="IT"> Information Tech
+
+                     </option>
+                     <option value="finance">
+                         Finance
+
+                    </option>
+                  </select>
+
+              </div>
+
+              <div class="form-check">
+                   <label asp-for="IsActive" class="form-check-label">Is Active?</label>
+                   <input type="checkbox" asp-for="IsActive" class="form-check-input" />
+              </div>
+              <div class="form-group">
+                   <label asp-for="JobTitle">Job Title</label>
+                   <input asp-for="JobTitle" class=" form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                   <label asp-for="DateNaissance">Date de Naissance </label>
+                    <input type="date" asp-for="DateNaissance" class=" form-control form-control-sm" />
+              </div>
+              <div class="form-group">
+                   <label asp-for="EmailAdresse">Email Adresse</label>
+                   <input type="email" asp-for="EmailAdresse" class="form-control form-control-sm" />
+              </div>
+
+               <button type="submit" class="btn btn-primary" > Save</button>
+
+        </form>
+        
+
+    
+    </body>
+    </html>

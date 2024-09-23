@@ -1,0 +1,42 @@
+﻿@model IEnumerable< Employees>
+<!DOCTYPE html>
+    <html>
+    <head>
+    <title> All Employees</title>
+    <style>
+        table.table-hover tbody tr:hover{
+            background-color : #007b77;
+        }
+
+        table.table-hover tbody tr td:hover {
+            background-color: orange;
+        }
+    </style>
+    </head>
+    <body>
+        <h2> Employees Informations</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <th>Name</th>
+                <th> Depatement</th>
+                <th>Job</th>
+                <th> Date de naissance</th>
+                <th>Email</th>
+               
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                { 
+                    <tr>
+                        <td> @item.EmployeeName</td>
+                        <td>@item.Departement</td>
+                        <td> @item.JobTitle</td>
+                        <td>@item.DateNaissance.ToShortDateString()</td>
+                        <td> @item.EmailAdresse</td>
+                    </tr>
+                
+                }
+            </tbody>
+        </table>
+    </body>
+    </html>
